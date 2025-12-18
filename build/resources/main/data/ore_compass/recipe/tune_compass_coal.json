@@ -1,9 +1,0 @@
-{
-  "type": "ore_compass:tune_compass",
-  "compass": {
-    "tag": "c:tools/ore_compass"
-  },
-  "ore": "minecraft:coal",
-  "ore_type": "coal",
-  "ore_count": 4
-}
