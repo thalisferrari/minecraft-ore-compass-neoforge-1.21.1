@@ -17,24 +17,23 @@ public class ClientSetup {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            OreCompassPropertyFunction propertyFunction = new OreCompassPropertyFunction();
-
+            // Create separate PropertyFunction for each compass to avoid shared state
             ItemProperties.register(
                 OreCompass.BASIC_ORE_COMPASS.get(),
                 ANGLE_PROPERTY,
-                propertyFunction
+                new OreCompassPropertyFunction()
             );
 
             ItemProperties.register(
                 OreCompass.ADVANCED_ORE_COMPASS.get(),
                 ANGLE_PROPERTY,
-                propertyFunction
+                new OreCompassPropertyFunction()
             );
 
             ItemProperties.register(
                 OreCompass.MASTER_ORE_COMPASS.get(),
                 ANGLE_PROPERTY,
-                propertyFunction
+                new OreCompassPropertyFunction()
             );
         });
     }

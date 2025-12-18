@@ -3,7 +3,7 @@
   "compass": {
     "tag": "c:tools/ore_compass"
   },
-  "ore": "minecraft:raw_iron",
+  "ore": {"item": "minecraft:raw_iron"},
   "ore_type": "iron",
   "ore_count": 4
 }

@@ -3,7 +3,7 @@
   "compass": {
     "tag": "c:tools/ore_compass"
   },
-  "ore": "minecraft:quartz",
+  "ore": {"item": "minecraft:quartz"},
   "ore_type": "nether_quartz",
   "ore_count": 4
 }

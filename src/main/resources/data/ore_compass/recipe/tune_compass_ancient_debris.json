@@ -3,7 +3,7 @@
   "compass": {
     "tag": "c:tools/ore_compass"
   },
-  "ore": "minecraft:ancient_debris",
+  "ore": {"item": "minecraft:ancient_debris"},
   "ore_type": "ancient_debris",
   "ore_count": 4
 }

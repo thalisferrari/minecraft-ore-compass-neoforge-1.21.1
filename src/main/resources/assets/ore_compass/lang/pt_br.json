@@ -1,0 +1,26 @@
+{
+  "item.ore_compass.basic_ore_compass": "Bússola de Minério Básica",
+  "item.ore_compass.advanced_ore_compass": "Bússola de Minério Avançada",
+  "item.ore_compass.master_ore_compass": "Bússola de Minério Mestre",
+
+  "itemGroup.ore_compass.ore_compass_tab": "Bússola de Minério",
+
+  "ore_compass.tier": "Nível: %s",
+  "ore_compass.range": "Alcance: %s blocos",
+  "ore_compass.tuned_to": "Sintonizada em: %s",
+  "ore_compass.detects_all": "Detecta: Todos os minérios de nível %s",
+
+  "ore_compass.ore.coal": "Carvão",
+  "ore_compass.ore.iron": "Ferro",
+  "ore_compass.ore.copper": "Cobre",
+  "ore_compass.ore.gold": "Ouro",
+  "ore_compass.ore.diamond": "Diamante",
+  "ore_compass.ore.lapis": "Lápis-Lazúli",
+  "ore_compass.ore.redstone": "Redstone",
+  "ore_compass.ore.emerald": "Esmeralda",
+  "ore_compass.ore.ancient_debris": "Detritos Ancestrais",
+  "ore_compass.ore.nether_quartz": "Quartzo do Nether",
+
+  "ore_compass.message.detected": "Minério detectado! Distância: %.1f blocos",
+  "ore_compass.message.no_ores": "Nenhum minério detectado no alcance"
+}

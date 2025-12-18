@@ -7,11 +7,11 @@
     "NLN"
   ],
   "key": {
-    "N": "minecraft:netherite_scrap",
-    "S": "minecraft:echo_shard",
-    "A": "minecraft:ancient_debris",
-    "B": "ore_compass:advanced_ore_compass",
-    "L": "minecraft:lodestone"
+    "N": {"item": "minecraft:netherite_scrap"},
+    "S": {"item": "minecraft:echo_shard"},
+    "A": {"item": "minecraft:ancient_debris"},
+    "B": {"item": "ore_compass:advanced_ore_compass"},
+    "L": {"item": "minecraft:lodestone"}
   },
   "result": {
     "id": "ore_compass:master_ore_compass",

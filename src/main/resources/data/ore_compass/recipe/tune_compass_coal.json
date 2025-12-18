@@ -3,7 +3,7 @@
   "compass": {
     "tag": "c:tools/ore_compass"
   },
-  "ore": "minecraft:coal",
+  "ore": {"item": "minecraft:coal"},
   "ore_type": "coal",
   "ore_count": 4
 }

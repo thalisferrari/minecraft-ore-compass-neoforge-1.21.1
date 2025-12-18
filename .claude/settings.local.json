@@ -10,7 +10,8 @@
       "Bash(xargs ls:*)",
       "Bash(xargs cat:*)",
       "WebSearch",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(./gradlew clean build:*)"
     ],
     "deny": [],
     "ask": []

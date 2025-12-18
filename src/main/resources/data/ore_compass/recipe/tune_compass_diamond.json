@@ -3,7 +3,7 @@
   "compass": {
     "tag": "c:tools/ore_compass"
   },
-  "ore": "minecraft:diamond",
+  "ore": {"item": "minecraft:diamond"},
   "ore_type": "diamond",
   "ore_count": 4
 }

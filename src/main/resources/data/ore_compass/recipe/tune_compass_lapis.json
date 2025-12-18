@@ -3,7 +3,7 @@
   "compass": {
     "tag": "c:tools/ore_compass"
   },
-  "ore": "minecraft:lapis_lazuli",
+  "ore": {"item": "minecraft:lapis_lazuli"},
   "ore_type": "lapis",
   "ore_count": 4
 }

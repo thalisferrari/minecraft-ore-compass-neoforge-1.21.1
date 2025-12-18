@@ -7,13 +7,13 @@
     "RAR"
   ],
   "key": {
-    "G": "minecraft:gold_ingot",
-    "D": "minecraft:diamond",
-    "L": "minecraft:lapis_lazuli",
-    "B": "ore_compass:basic_ore_compass",
-    "E": "minecraft:emerald",
-    "R": "minecraft:redstone_block",
-    "A": "minecraft:amethyst_shard"
+    "G": {"item": "minecraft:gold_ingot"},
+    "D": {"item": "minecraft:diamond"},
+    "L": {"item": "minecraft:lapis_lazuli"},
+    "B": {"item": "ore_compass:basic_ore_compass"},
+    "E": {"item": "minecraft:emerald"},
+    "R": {"item": "minecraft:redstone_block"},
+    "A": {"item": "minecraft:amethyst_shard"}
   },
   "result": {
     "id": "ore_compass:advanced_ore_compass",

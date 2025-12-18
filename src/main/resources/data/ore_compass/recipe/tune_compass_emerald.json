@@ -3,7 +3,7 @@
   "compass": {
     "tag": "c:tools/ore_compass"
   },
-  "ore": "minecraft:emerald",
+  "ore": {"item": "minecraft:emerald"},
   "ore_type": "emerald",
   "ore_count": 4
 }

@@ -187,8 +187,10 @@ public class OreCompassItem extends Item {
     @Override
     public void inventoryTick(ItemStack stack, Level level, Entity entity, int slotId, boolean isSelected) {
         if (!level.isClientSide && entity instanceof Player player) {
-            // Update every 20 ticks (1 second)
-            if (level.getGameTime() % 20 == 0) {
+            // Update immediately when selected (held in hand) or every 20 ticks when in inventory
+            boolean shouldUpdate = isSelected || (level.getGameTime() % 20 == 0);
+
+            if (shouldUpdate) {
                 updateCompass(stack, level, player);
             }
         }
@@ -266,7 +268,8 @@ public class OreCompassItem extends Item {
             updateCompass(stack, level, player);
         }
 
-        return InteractionResultHolder.success(stack);
+        // Use pass() to avoid the "lowering hand" animation
+        return InteractionResultHolder.pass(stack);
     }
 
     @Override
