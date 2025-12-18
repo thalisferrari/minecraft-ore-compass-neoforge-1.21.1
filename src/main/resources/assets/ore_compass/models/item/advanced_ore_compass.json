@@ -2,5 +2,199 @@
   "parent": "minecraft:item/generated",
   "textures": {
     "layer0": "ore_compass:item/advanced_ore_compass"
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "ore_compass:angle": 0.0
+      },
+      "model": "ore_compass:item/advanced_ore_compass_00"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.03125
+      },
+      "model": "ore_compass:item/advanced_ore_compass_01"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.0625
+      },
+      "model": "ore_compass:item/advanced_ore_compass_02"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.09375
+      },
+      "model": "ore_compass:item/advanced_ore_compass_03"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.125
+      },
+      "model": "ore_compass:item/advanced_ore_compass_04"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.15625
+      },
+      "model": "ore_compass:item/advanced_ore_compass_05"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.1875
+      },
+      "model": "ore_compass:item/advanced_ore_compass_06"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.21875
+      },
+      "model": "ore_compass:item/advanced_ore_compass_07"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.25
+      },
+      "model": "ore_compass:item/advanced_ore_compass_08"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.28125
+      },
+      "model": "ore_compass:item/advanced_ore_compass_09"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.3125
+      },
+      "model": "ore_compass:item/advanced_ore_compass_10"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.34375
+      },
+      "model": "ore_compass:item/advanced_ore_compass_11"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.375
+      },
+      "model": "ore_compass:item/advanced_ore_compass_12"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.40625
+      },
+      "model": "ore_compass:item/advanced_ore_compass_13"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.4375
+      },
+      "model": "ore_compass:item/advanced_ore_compass_14"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.46875
+      },
+      "model": "ore_compass:item/advanced_ore_compass_15"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.5
+      },
+      "model": "ore_compass:item/advanced_ore_compass_16"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.53125
+      },
+      "model": "ore_compass:item/advanced_ore_compass_17"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.5625
+      },
+      "model": "ore_compass:item/advanced_ore_compass_18"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.59375
+      },
+      "model": "ore_compass:item/advanced_ore_compass_19"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.625
+      },
+      "model": "ore_compass:item/advanced_ore_compass_20"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.65625
+      },
+      "model": "ore_compass:item/advanced_ore_compass_21"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.6875
+      },
+      "model": "ore_compass:item/advanced_ore_compass_22"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.71875
+      },
+      "model": "ore_compass:item/advanced_ore_compass_23"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.75
+      },
+      "model": "ore_compass:item/advanced_ore_compass_24"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.78125
+      },
+      "model": "ore_compass:item/advanced_ore_compass_25"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.8125
+      },
+      "model": "ore_compass:item/advanced_ore_compass_26"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.84375
+      },
+      "model": "ore_compass:item/advanced_ore_compass_27"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.875
+      },
+      "model": "ore_compass:item/advanced_ore_compass_28"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.90625
+      },
+      "model": "ore_compass:item/advanced_ore_compass_29"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.9375
+      },
+      "model": "ore_compass:item/advanced_ore_compass_30"
+    },
+    {
+      "predicate": {
+        "ore_compass:angle": 0.96875
+      },
+      "model": "ore_compass:item/advanced_ore_compass_31"
+    }
+  ]
 }

@@ -26,6 +26,7 @@ public class OreCompassItem extends Item {
     private static final String NBT_TARGET_X = "TargetX";
     private static final String NBT_TARGET_Y = "TargetY";
     private static final String NBT_TARGET_Z = "TargetZ";
+    private static final String NBT_DETECTED_ORE = "DetectedOre";
 
     private final int tier;
     private final int range;
@@ -105,7 +106,7 @@ public class OreCompassItem extends Item {
      * Get the stored target position
      */
     @Nullable
-    private static BlockPos getTargetPos(ItemStack stack) {
+    public static BlockPos getTargetPos(ItemStack stack) {
         CompoundTag tag = getCustomData(stack);
         if (tag.contains(NBT_TARGET_X)) {
             return new BlockPos(
@@ -115,6 +116,36 @@ public class OreCompassItem extends Item {
             );
         }
         return null;
+    }
+
+    /**
+     * Set the detected ore type
+     */
+    private static void setDetectedOre(ItemStack stack, OreType oreType) {
+        CompoundTag tag = getCustomData(stack);
+        tag.putString(NBT_DETECTED_ORE, oreType.getName());
+        setCustomData(stack, tag);
+    }
+
+    /**
+     * Get the detected ore type (for non-tuned compasses)
+     */
+    @Nullable
+    public static OreType getDetectedOre(ItemStack stack) {
+        CompoundTag tag = getCustomData(stack);
+        if (tag.contains(NBT_DETECTED_ORE)) {
+            return OreType.fromName(tag.getString(NBT_DETECTED_ORE));
+        }
+        return null;
+    }
+
+    /**
+     * Clear the detected ore
+     */
+    private static void clearDetectedOre(ItemStack stack) {
+        CompoundTag tag = getCustomData(stack);
+        tag.remove(NBT_DETECTED_ORE);
+        setCustomData(stack, tag);
     }
 
     /**
@@ -191,21 +222,38 @@ public class OreCompassItem extends Item {
 
         // Find nearest ore
         BlockPos targetPos = null;
+        OreType detectedOreType = null;
+
         if (tunedOre != null) {
             // Tuned to specific ore
             targetPos = OreDetector.findNearestOre(level, playerPos, range, tunedOre);
+            if (targetPos != null) {
+                detectedOreType = tunedOre;
+            }
         } else {
             // Detect all ores for this tier
             List<OreType> detectableOres = OreType.getOresForTier(tier);
             targetPos = OreDetector.findNearestOre(level, playerPos, range, detectableOres);
+
+            // Identify which ore type was found
+            if (targetPos != null) {
+                for (OreType oreType : detectableOres) {
+                    if (oreType.matches(level.getBlockState(targetPos).getBlock())) {
+                        detectedOreType = oreType;
+                        break;
+                    }
+                }
+            }
         }
 
-        // Update or clear position
-        if (targetPos != null) {
+        // Update or clear position and detected ore
+        if (targetPos != null && detectedOreType != null) {
             setTargetPos(stack, targetPos);
+            setDetectedOre(stack, detectedOreType);
         } else {
             // No ore found, clear any stored position
             clearTargetPos(stack);
+            clearDetectedOre(stack);
         }
     }
 
@@ -216,48 +264,6 @@ public class OreCompassItem extends Item {
         if (!level.isClientSide) {
             // Force update when used
             updateCompass(stack, level, player);
-
-            BlockPos target = getTargetPos(stack);
-            if (target != null) {
-                // Identify which ore type is at the target position
-                String oreTypeName = "Unknown";
-                OreType tunedOre = getTunedOre(stack);
-
-                if (tunedOre != null) {
-                    // For tuned compass, we know it's the tuned ore
-                    oreTypeName = tunedOre.getName().toUpperCase().replace("_", " ");
-                } else {
-                    // For non-tuned compass, check which ore it is
-                    List<OreType> detectableOres = OreType.getOresForTier(tier);
-                    for (OreType oreType : detectableOres) {
-                        if (oreType.matches(level.getBlockState(target).getBlock())) {
-                            oreTypeName = oreType.getName().toUpperCase().replace("_", " ");
-                            break;
-                        }
-                    }
-                }
-
-                double distance = Math.sqrt(player.blockPosition().distSqr(target));
-                player.displayClientMessage(
-                        Component.literal(String.format("%s detected! Distance: %.1f blocks", oreTypeName, distance))
-                                .withStyle(ChatFormatting.GREEN),
-                        true
-                );
-            } else {
-                String message;
-                OreType tunedOre = getTunedOre(stack);
-                if (tunedOre != null) {
-                    message = String.format("No %s detected in range", tunedOre.getName().toUpperCase().replace("_", " "));
-                } else {
-                    message = "No ores detected in range";
-                }
-
-                player.displayClientMessage(
-                        Component.literal(message)
-                                .withStyle(ChatFormatting.RED),
-                        true
-                );
-            }
         }
 
         return InteractionResultHolder.success(stack);

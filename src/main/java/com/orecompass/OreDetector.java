@@ -15,17 +15,21 @@ import java.util.List;
 public class OreDetector {
 
     /**
-     * Find the nearest ore of the specified types within the given range
+     * Find the highest priority ore within the given range
+     * Priority is based on ore rarity (lower priority number = more valuable)
+     * Among same priority ores, the nearest one is chosen
+     *
      * @param level The world/level
      * @param playerPos The player's position
      * @param range The detection range in blocks
      * @param targetOres List of ore types to detect
-     * @return BlockPos of nearest ore, or null if none found
+     * @return BlockPos of highest priority ore, or null if none found
      */
     @Nullable
     public static BlockPos findNearestOre(Level level, BlockPos playerPos, int range, List<OreType> targetOres) {
-        BlockPos nearestPos = null;
-        double nearestDistance = Double.MAX_VALUE;
+        BlockPos bestPos = null;
+        int bestPriority = Integer.MAX_VALUE;
+        double bestDistance = Double.MAX_VALUE;
 
         // Scan in a cube around the player
         for (int x = -range; x <= range; x++) {
@@ -38,10 +42,14 @@ public class OreDetector {
                     // Check if this block matches any of our target ores
                     for (OreType oreType : targetOres) {
                         if (oreType.matches(block)) {
+                            int priority = oreType.getPriority();
                             double distance = playerPos.distSqr(checkPos);
-                            if (distance < nearestDistance) {
-                                nearestDistance = distance;
-                                nearestPos = checkPos;
+
+                            // Select if: higher priority (lower number) OR same priority but closer
+                            if (priority < bestPriority || (priority == bestPriority && distance < bestDistance)) {
+                                bestPriority = priority;
+                                bestDistance = distance;
+                                bestPos = checkPos;
                             }
                             break; // Found a match, no need to check other ore types
                         }
@@ -50,7 +58,7 @@ public class OreDetector {
             }
         }
 
-        return nearestPos;
+        return bestPos;
     }
 
     /**

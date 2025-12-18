@@ -9,7 +9,8 @@
       "Bash(find:*)",
       "Bash(xargs ls:*)",
       "Bash(xargs cat:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []
