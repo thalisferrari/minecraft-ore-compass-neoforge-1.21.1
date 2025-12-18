@@ -1,0 +1,9 @@
+{
+  "type": "ore_compass:tune_compass",
+  "compass": {
+    "tag": "c:tools/ore_compass"
+  },
+  "ore": "minecraft:redstone",
+  "ore_type": "redstone",
+  "ore_count": 4
+}

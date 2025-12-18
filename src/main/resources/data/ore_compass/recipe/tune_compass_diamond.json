@@ -1,0 +1,9 @@
+{
+  "type": "ore_compass:tune_compass",
+  "compass": {
+    "tag": "c:tools/ore_compass"
+  },
+  "ore": "minecraft:diamond",
+  "ore_type": "diamond",
+  "ore_count": 4
+}

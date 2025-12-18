@@ -1,0 +1,9 @@
+{
+  "type": "ore_compass:tune_compass",
+  "compass": {
+    "tag": "c:tools/ore_compass"
+  },
+  "ore": "minecraft:emerald",
+  "ore_type": "emerald",
+  "ore_count": 4
+}

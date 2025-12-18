@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(set:*)",
+      "Bash(chcp:*)",
+      "Bash(java -version:*)",
+      "Bash(./gradlew build:*)",
+      "Bash(find:*)",
+      "Bash(xargs ls:*)",
+      "Bash(xargs cat:*)",
+      "WebSearch"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
