@@ -12,7 +12,10 @@
       "WebSearch",
       "Bash(ls:*)",
       "Bash(./gradlew clean build:*)",
-      "Bash(del \"D:\\\\Work\\\\projects\\\\minecraft\\\\ore-compass-neoforge-1.21.1\\\\src\\\\main\\\\java\\\\com\\\\orecompass\\\\client\\\\OreCompassHudOverlay.java\")"
+      "Bash(del \"D:\\\\Work\\\\projects\\\\minecraft\\\\ore-compass-neoforge-1.21.1\\\\src\\\\main\\\\java\\\\com\\\\orecompass\\\\client\\\\OreCompassHudOverlay.java\")",
+      "Bash(needle \")",
+      "Bash(del \"D:\\\\Work\\\\projects\\\\minecraft\\\\ore-compass-neoforge-1.21.1\\\\temp_old_texture.png\")",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

@@ -62,6 +62,13 @@ public enum OreType {
     }
 
     /**
+     * Get the primary ore block for this type (used for HUD icon)
+     */
+    public Block getOreBlock() {
+        return blocks.isEmpty() ? Blocks.STONE : blocks.get(0);
+    }
+
+    /**
      * Check if a block is one of the ore blocks for this type
      */
     public boolean matches(Block block) {
