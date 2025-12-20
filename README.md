@@ -5,9 +5,9 @@ A Minecraft NeoForge mod (1.21.1) that adds magical compasses capable of detecti
 ## Features
 
 - **Animated Compass Needle**: The compass needle rotates smoothly to point towards detected ores, just like the vanilla compass
+- **Color-Coded Needle**: The needle color changes to match the tracked ore (cyan for diamond, red for redstone, etc.)
 - **Three Compass Tiers**: Basic, Advanced, and Master compasses with increasing detection ranges
 - **Priority-Based Detection**: Detects the rarest ore first, not just the closest one
-- **HUD Display**: Shows the name of the currently tracked ore above the hotbar
 - **Ore Tuning**: Tune your compass to search for a specific ore type
 
 ## Compass Tiers
@@ -81,14 +81,30 @@ To tune a compass to detect only a specific ore type, combine any Ore Compass wi
 1. **Craft a compass** of the desired tier
 2. **Hold the compass** in your main hand or off-hand
 3. **Watch the needle** - it will point towards the nearest ore (by priority) within range
-4. **Check the HUD** - the ore name appears above your hotbar when tracking
+4. **Check the needle color** - the color indicates which ore is being tracked
 5. **Optional: Tune the compass** to search for a specific ore type
 
 ## Compass Behavior
 
-- **Ore Found**: The needle points steadily towards the ore location
-- **No Ore in Range**: The needle spins randomly (like a vanilla compass in the Nether/End)
+- **Ore Found**: The needle points steadily towards the ore location and changes color to match the ore
+- **No Ore in Range**: The needle spins randomly with a muted red color
 - **Tuned Compass**: Only searches for the specified ore type, ignoring all others
+
+## Needle Colors
+
+| Ore | Needle Color |
+|-----|--------------|
+| Coal | Dark gray |
+| Iron | Beige/salmon |
+| Copper | Orange |
+| Gold | Yellow |
+| Diamond | Cyan |
+| Lapis Lazuli | Dark blue |
+| Redstone | Red |
+| Emerald | Green |
+| Ancient Debris | Brown |
+| Nether Quartz | White/cream |
+| No target | Muted red |
 
 ## Installation
 

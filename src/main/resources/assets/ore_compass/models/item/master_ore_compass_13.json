@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "ore_compass:item/master_ore_compass_13"
+    "layer0": "ore_compass:item/master_ore_compass_body",
+    "layer1": "ore_compass:item/ore_compass_needle_13"
   }
 }

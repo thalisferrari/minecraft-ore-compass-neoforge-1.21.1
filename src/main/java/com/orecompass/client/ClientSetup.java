@@ -1,13 +1,13 @@
 package com.orecompass.client;
 
 import com.orecompass.OreCompass;
-import com.orecompass.OreCompassItem;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 
 @EventBusSubscriber(modid = OreCompass.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientSetup {
@@ -36,5 +36,15 @@ public class ClientSetup {
                 new OreCompassPropertyFunction()
             );
         });
+    }
+
+    @SubscribeEvent
+    public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+        OreCompassItemColor colorHandler = new OreCompassItemColor();
+        event.register(colorHandler,
+            OreCompass.BASIC_ORE_COMPASS.get(),
+            OreCompass.ADVANCED_ORE_COMPASS.get(),
+            OreCompass.MASTER_ORE_COMPASS.get()
+        );
     }
 }
