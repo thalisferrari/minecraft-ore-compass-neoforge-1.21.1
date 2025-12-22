@@ -12,11 +12,11 @@ A Minecraft NeoForge mod (1.21.1) that adds magical compasses capable of detecti
 
 ## Compass Tiers
 
-| Tier | Name | Range | Detectable Ores |
-|------|------|-------|-----------------|
-| 1 | Basic Ore Compass | 16 blocks | Coal, Iron, Copper |
-| 2 | Advanced Ore Compass | 32 blocks | All Tier 1 + Gold, Diamond, Lapis, Redstone, Emerald |
-| 3 | Master Ore Compass | 64 blocks | All Tier 2 + Ancient Debris, Nether Quartz |
+| Tier | Name                 | Range     | Detectable Ores                                      |
+| ---- | -------------------- | --------- | ---------------------------------------------------- |
+| 1    | Basic Ore Compass    | 16 blocks | Coal, Iron, Copper                                   |
+| 2    | Advanced Ore Compass | 32 blocks | All Tier 1 + Gold, Diamond, Lapis, Redstone, Emerald |
+| 3    | Master Ore Compass   | 64 blocks | All Tier 2 + Ancient Debris, Nether Quartz           |
 
 ## Ore Detection Priority
 
@@ -26,9 +26,9 @@ When multiple ores are in range, the compass prioritizes by rarity (not distance
 2. Diamond
 3. Nether Quartz
 4. Emerald
-5. Iron
-6. Lapis Lazuli
-7. Gold
+5. Gold
+6. Iron
+7. Lapis Lazuli
 8. Coal
 9. Redstone
 10. Copper (lowest priority)
@@ -63,18 +63,18 @@ When multiple ores are in range, the compass prioritizes by rarity (not distance
 
 To tune a compass to detect only a specific ore type, combine any Ore Compass with 4 of the target material in a crafting table:
 
-| Target Ore | Required Items |
-|------------|----------------|
-| Coal | 4x Coal |
-| Iron | 4x Raw Iron |
-| Copper | 4x Raw Copper |
-| Gold | 4x Raw Gold |
-| Diamond | 4x Diamond |
-| Lapis Lazuli | 4x Lapis Lazuli |
-| Redstone | 4x Redstone |
-| Emerald | 4x Emerald |
+| Target Ore     | Required Items    |
+| -------------- | ----------------- |
+| Coal           | 4x Coal           |
+| Iron           | 4x Raw Iron       |
+| Copper         | 4x Raw Copper     |
+| Gold           | 4x Raw Gold       |
+| Diamond        | 4x Diamond        |
+| Lapis Lazuli   | 4x Lapis Lazuli   |
+| Redstone       | 4x Redstone       |
+| Emerald        | 4x Emerald        |
 | Ancient Debris | 4x Ancient Debris |
-| Nether Quartz | 4x Quartz |
+| Nether Quartz  | 4x Quartz         |
 
 ## How to Use
 

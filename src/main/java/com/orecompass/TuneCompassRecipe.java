@@ -31,7 +31,7 @@ public class TuneCompassRecipe implements CraftingRecipe {
 
     @Override
     public boolean matches(CraftingInput input, Level level) {
-        boolean hasCompass = false;
+        ItemStack compassStack = ItemStack.EMPTY;
         int oreMatches = 0;
 
         for (int i = 0; i < input.size(); i++) {
@@ -41,10 +41,10 @@ public class TuneCompassRecipe implements CraftingRecipe {
             }
 
             if (compass.test(stack)) {
-                if (hasCompass) {
+                if (!compassStack.isEmpty()) {
                     return false; // Only one compass allowed
                 }
-                hasCompass = true;
+                compassStack = stack;
             } else if (ore.test(stack)) {
                 oreMatches++;
             } else {
@@ -52,7 +52,19 @@ public class TuneCompassRecipe implements CraftingRecipe {
             }
         }
 
-        return hasCompass && oreMatches == oreCount;
+        if (compassStack.isEmpty() || oreMatches != oreCount) {
+            return false;
+        }
+
+        // Validate compass tier can detect this ore type
+        OreType targetOre = OreType.fromName(oreType);
+        if (targetOre != null && compassStack.getItem() instanceof OreCompassItem compassItem) {
+            if (compassItem.getTier() < targetOre.getTier()) {
+                return false; // Compass tier too low for this ore
+            }
+        }
+
+        return true;
     }
 
     @Override
@@ -72,9 +84,15 @@ public class TuneCompassRecipe implements CraftingRecipe {
             return ItemStack.EMPTY;
         }
 
-        // Set the tuned ore type
+        // Set the tuned ore type with tier validation
         OreType targetOre = OreType.fromName(oreType);
         if (targetOre != null) {
+            // Validate compass tier can detect this ore type
+            if (compassStack.getItem() instanceof OreCompassItem compassItem) {
+                if (compassItem.getTier() < targetOre.getTier()) {
+                    return ItemStack.EMPTY; // Safety check - compass tier too low
+                }
+            }
             OreCompassItem.setTunedOre(compassStack, targetOre);
         }
 

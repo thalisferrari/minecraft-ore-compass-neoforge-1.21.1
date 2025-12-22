@@ -13,13 +13,13 @@ import java.util.List;
 public enum OreType {
     // Tier 1 - Basic ores
     COAL("coal", 1, 8, 0x2D2D2D, Blocks.COAL_ORE, Blocks.DEEPSLATE_COAL_ORE),
-    IRON("iron", 1, 5, 0xD8AF93, Blocks.IRON_ORE, Blocks.DEEPSLATE_IRON_ORE),
+    IRON("iron", 1, 6, 0xD8AF93, Blocks.IRON_ORE, Blocks.DEEPSLATE_IRON_ORE),
     COPPER("copper", 1, 10, 0xE07C4A, Blocks.COPPER_ORE, Blocks.DEEPSLATE_COPPER_ORE),
 
     // Tier 2 - Advanced ores
-    GOLD("gold", 2, 7, 0xFCDB4A, Blocks.GOLD_ORE, Blocks.DEEPSLATE_GOLD_ORE, Blocks.NETHER_GOLD_ORE),
+    GOLD("gold", 2, 5, 0xFCDB4A, Blocks.GOLD_ORE, Blocks.DEEPSLATE_GOLD_ORE, Blocks.NETHER_GOLD_ORE),
     DIAMOND("diamond", 2, 2, 0x4AEDD9, Blocks.DIAMOND_ORE, Blocks.DEEPSLATE_DIAMOND_ORE),
-    LAPIS("lapis", 2, 6, 0x1E4B9E, Blocks.LAPIS_ORE, Blocks.DEEPSLATE_LAPIS_ORE),
+    LAPIS("lapis", 2, 7, 0x1E4B9E, Blocks.LAPIS_ORE, Blocks.DEEPSLATE_LAPIS_ORE),
     REDSTONE("redstone", 2, 9, 0xAA0000, Blocks.REDSTONE_ORE, Blocks.DEEPSLATE_REDSTONE_ORE),
     EMERALD("emerald", 2, 4, 0x17DD62, Blocks.EMERALD_ORE, Blocks.DEEPSLATE_EMERALD_ORE),
 
